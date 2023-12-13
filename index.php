@@ -23,15 +23,16 @@ include_once 'functions.php';
         </div>
     </form>
 
-    <div class="d-flex justify-content-center">
-        <p class="<?php echo $flag ? 'ms_success' : 'ms_danger'; ?>">
-            <?php
-            if ($email !== null) {
-                echo $result;
-            }
-            ?>
-        </p>
-    </div>
+    <?php if ($result !== null) { ?> <div class="d-flex justify-content-center">
+            <p class="alert <?php echo $flag ? 'alert-primary' : 'alert-danger'; ?>">
+                <?php
+                if ($email !== null) {
+                    echo $result;
+                }
+                ?>
+            </p>
+        </div>
+    <?php } ?>
 
 </body>
 
