@@ -19,7 +19,7 @@ include_once 'functions.php';
     <form action="index.php" method="POST">
         <div class="my-3 d-flex justify-content-center flex-column align-items-center">
             <label for=email" class="form-label">Inserisci qui la tua email</label>
-            <input type="email" class="form-control w-25" id=email" name="email">
+            <input type="email" class="form-control w-25" id=email" name="email" value="<?php echo $email?>">
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </div>
     </form>

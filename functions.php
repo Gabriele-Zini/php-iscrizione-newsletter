@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = (isset($_POST['email'])) ? $_POST['email'] : null;
     $result = validateEmail($email, $flag);
     $_SESSION['email'] = $email;
+    $user_input = (isset($_POST['email'])) ? $_POST['email'] : null;
 }
 
 if ($flag) {
