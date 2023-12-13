@@ -1,1 +1,9 @@
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+.ms_success  {
+    color: rgb(36, 220, 36);
+}
+
+.ms_danger {
+    color: red;
+}
