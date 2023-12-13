@@ -1,10 +1,12 @@
 <?php
 
+session_start();
 
-$email = (isset($_POST['mail'])) ? $_POST['mail'] : null;
+
+$email = (isset($_POST['email'])) ? $_POST['email'] : null;
+$_SESSION['email'] = $email;
 $result = null;
-$class = '';
-$flag = true;
+$flag = false;
 
 function validateEmail($email, &$flag)
 {
@@ -19,7 +21,13 @@ function validateEmail($email, &$flag)
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = (isset($_POST['mail'])) ? $_POST['mail'] : null;
+    $email = (isset($_POST['email'])) ? $_POST['email'] : null;
     $result = validateEmail($email, $flag);
-    $class = $flag ? 'ms_success' : 'ms_danger';
+}
+
+if ($flag) {
+
+    session_unset();
+    session_destroy();
+    header('Location: ./thankyou.php');
 }

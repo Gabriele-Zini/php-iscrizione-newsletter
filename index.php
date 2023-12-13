@@ -1,6 +1,7 @@
 <?php
 include_once 'functions.php';
 
+
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +18,8 @@ include_once 'functions.php';
 
     <form action="index.php" method="POST">
         <div class="my-3 d-flex justify-content-center flex-column align-items-center">
-            <label for=mail" class="form-label">Inserisci qui la tua mail</label>
-            <input type="email" class="form-control w-25" id=mail" name="mail">
+            <label for=email" class="form-label">Inserisci qui la tua email</label>
+            <input type="email" class="form-control w-25" id=email" name="email">
             <button type="submit" class="btn btn-primary mt-3">Submit</button>
         </div>
     </form>
