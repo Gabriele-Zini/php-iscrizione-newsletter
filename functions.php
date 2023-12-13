@@ -4,7 +4,6 @@ session_start();
 
 
 $email = (isset($_POST['email'])) ? $_POST['email'] : null;
-$_SESSION['email'] = $email;
 $result = null;
 $flag = false;
 
@@ -23,11 +22,9 @@ function validateEmail($email, &$flag)
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = (isset($_POST['email'])) ? $_POST['email'] : null;
     $result = validateEmail($email, $flag);
+    $_SESSION['email'] = $email;
 }
 
 if ($flag) {
-
-    session_unset();
-    session_destroy();
     header('Location: ./thankyou.php');
 }
